@@ -12,9 +12,35 @@ struct Home: View {
     var safeArea: EdgeInsets
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HeaderView(size: size, safeArea: safeArea)
+        }
     }
 }
+
+struct HeaderView: View {
+   
+    var size: CGSize
+    var safeArea: EdgeInsets
+    
+    var body: some View {
+        VStack {
+            Image("air-canada-logo_002")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: size.width * 0.6)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(15)
+        .padding(.top, safeArea.top)
+        .padding(.bottom)
+        .background {
+            Rectangle()
+                .fill(.linearGradient(colors: [Color.gray, Color.blue, Color.indigo], startPoint: .top, endPoint: .bottom))
+        }
+    }
+}
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
