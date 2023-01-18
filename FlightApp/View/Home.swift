@@ -52,13 +52,20 @@ struct HeaderView: View {
                                  timing: "23 Nov, 07:15")
             }
             .padding(.top, 15)
+            
+            Image("airplane_001")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 160)
+                .padding(.bottom, -20)
+                .padding(.top)
         }
         .padding(15)
         .padding(.top, safeArea.top)
         .padding(.bottom)
         .background {
             Rectangle()
-                .fill(.linearGradient(colors: [Color.gray, Color.blue, Color.indigo], startPoint: .top, endPoint: .bottom))
+                .fill(.linearGradient(colors: [Color.blue.opacity(0.5), Color.pink.opacity(0.7), Color.red.opacity(0.9)], startPoint: .top, endPoint: .bottom))
         }
     }
 }
