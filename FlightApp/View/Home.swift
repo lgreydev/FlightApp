@@ -14,6 +14,8 @@ struct Home: View {
     var body: some View {
         VStack {
             HeaderView(size: size, safeArea: safeArea)
+            
+            PaymentCardView()
         }
     }
 }
@@ -93,6 +95,19 @@ struct FlightDetailView: View {
         .frame(maxWidth: .infinity)
     }
 }
+
+struct PaymentCardView: View {
+    var body: some View {
+        VStack {
+            Text("SELECT PAYMENT METHOD")
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
+                .padding(.vertical)
+        }
+    }
+}
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
