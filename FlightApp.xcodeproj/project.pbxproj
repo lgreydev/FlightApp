@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA62C802988A6F4006B0927 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA62C7F2988A6F4006B0927 /* Card.swift */; };
 		5ED5C3A9296E41E2003075A6 /* FlightAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */; };
 		5ED5C3AB296E41E2003075A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3AA296E41E2003075A6 /* ContentView.swift */; };
 		5ED5C3AD296E41E4003075A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED5C3AC296E41E4003075A6 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EA62C7F2988A6F4006B0927 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5ED5C3A5296E41E2003075A6 /* FlightApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAppApp.swift; sourceTree = "<group>"; };
 		5ED5C3AA296E41E2003075A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EA62C7E2988A6C7006B0927 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EA62C7F2988A6F4006B0927 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5ED5C39C296E41E2003075A6 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		5ED5C3A7296E41E2003075A6 /* FlightApp */ = {
 			isa = PBXGroup;
 			children = (
+				5EA62C7E2988A6C7006B0927 /* Model */,
 				5ED5C3B6296E422D003075A6 /* View */,
 				5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */,
 				5ED5C3AA296E41E2003075A6 /* ContentView.swift */,
@@ -151,6 +162,7 @@
 				5ED5C3AB296E41E2003075A6 /* ContentView.swift in Sources */,
 				5ED5C3B8296E423A003075A6 /* Home.swift in Sources */,
 				5ED5C3A9296E41E2003075A6 /* FlightAppApp.swift in Sources */,
+				5EA62C802988A6F4006B0927 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
