@@ -13,13 +13,10 @@ struct Card: Identifiable {
 }
 
 var sampleCards: [Card] = [
-    .init(cardImage: "card1"),
-    .init(cardImage: "card2"),
-    .init(cardImage: "card3"),
-    .init(cardImage: "card4"),
-    .init(cardImage: "card5"),
-    .init(cardImage: "card6"),
-    .init(cardImage: "card7"),
-    .init(cardImage: "card8"),
-    .init(cardImage: "card9")
+    .init(cardImage: "credit_card_001"),
+    .init(cardImage: "credit_card_002"),
+    .init(cardImage: "credit_card_003"),
+    .init(cardImage: "credit_card_004"),
+    .init(cardImage: "credit_card_005"),
+    .init(cardImage: "credit_card_006"),
 ]

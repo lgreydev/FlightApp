@@ -104,6 +104,18 @@ struct PaymentCardView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.gray)
                 .padding(.vertical)
+            
+            GeometryReader { _ in
+                VStack(spacing: 0) {
+                    ForEach(sampleCards.indices, id: \.self) { index in
+                        Image(sampleCards[index].cardImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .padding(.horizontal)
+                    }
+                    
+                }
+            }
         }
     }
 }
