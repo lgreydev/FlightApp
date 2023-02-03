@@ -108,15 +108,34 @@ struct PaymentCardView: View {
             GeometryReader { _ in
                 VStack(spacing: 0) {
                     ForEach(sampleCards.indices, id: \.self) { index in
-                        Image(sampleCards[index].cardImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .padding(.horizontal)
+                        CardView(index: index)
+                            .padding(.top, 100)
                     }
-                    
                 }
             }
         }
+        .coordinateSpace(name: "SCROLL")
+    }
+}
+
+struct CardView: View {
+    var index: Int
+    
+    var body: some View {
+        GeometryReader { proxy in
+            let size = proxy.size
+            let minY = proxy.frame(in: .named("SCROLL")).minY
+            let prograss = minY / size.height
+            
+            Image(sampleCards[index].cardImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: size.width, height: size.height)
+                .shadow(color: .black.opacity(0.5), radius: 8, x: 6, y: 6)
+                .padding(.top, prograss * -160)
+        }
+        .frame(height: 200)
+        .zIndex(Double(sampleCards.count - index))
     }
 }
 
