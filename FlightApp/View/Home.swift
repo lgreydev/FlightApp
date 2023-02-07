@@ -126,12 +126,16 @@ struct CardView: View {
             let size = proxy.size
             let minY = proxy.frame(in: .named("SCROLL")).minY
             let prograss = minY / size.height
+            let constrainedProgress = prograss > 1 ? 1 : prograss < 0 ? 0 : prograss
             
             Image(sampleCards[index].cardImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size.width, height: size.height)
                 .shadow(color: .black.opacity(0.5), radius: 8, x: 6, y: 6)
+                .rotation3DEffect(.init(degrees: constrainedProgress * 40.0),
+                                  axis: (x: 1, y: 0, z: 0),
+                                  anchor: .bottom)
                 .padding(.top, prograss * -160)
         }
         .frame(height: 200)
