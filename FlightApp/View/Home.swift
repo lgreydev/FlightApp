@@ -11,11 +11,16 @@ struct Home: View {
     var size: CGSize
     var safeArea: EdgeInsets
     
+    @State private var offsetY: CGFloat = 0
+    @State private var currentCardIndex: CGFloat = 0
+    
     var body: some View {
         VStack {
             HeaderView(size: size, safeArea: safeArea)
+                .zIndex(1)
             
-            PaymentCardView()
+            PaymentCardView(offsetY: $offsetY, currentCardIndex: $currentCardIndex)
+                .zIndex(0)
         }
     }
 }
@@ -67,7 +72,7 @@ struct HeaderView: View {
         .padding(.bottom)
         .background {
             Rectangle()
-                .fill(.linearGradient(colors: [Color.blue.opacity(0.5), Color.pink.opacity(0.7), Color.red.opacity(0.9)], startPoint: .top, endPoint: .bottom))
+                .fill(.linearGradient(colors: [Color.blue, Color.pink, Color.red], startPoint: .top, endPoint: .bottom))
         }
     }
 }
@@ -97,6 +102,9 @@ struct FlightDetailView: View {
 }
 
 struct PaymentCardView: View {
+    @Binding var offsetY: CGFloat
+    @Binding var currentCardIndex: CGFloat
+    
     var body: some View {
         VStack {
             Text("SELECT PAYMENT METHOD")
@@ -110,11 +118,35 @@ struct PaymentCardView: View {
                     ForEach(sampleCards.indices, id: \.self) { index in
                         CardView(index: index)
                     }
-                    .padding(.horizontal, 30)
                 }
-                .coordinateSpace(name: "SCROLL")
+                .padding(.horizontal, 30)
+                .offset(y: offsetY)
+                .offset(y: currentCardIndex * -200.0)
             }
+            .coordinateSpace(name: "SCROLL")
         }
+        .contentShape(Rectangle())
+        .gesture(
+            DragGesture()
+                .onChanged { value in
+                    offsetY = value.translation.height * 0.3
+                }
+                .onEnded { value in
+                    let translation = value.translation.height
+                    
+                    withAnimation(.easeInOut) {
+                        if translation > 0 && translation > 100 && currentCardIndex > 0 {
+                            currentCardIndex -= 1
+                        }
+                        
+                        if translation < 0 && -translation > 100 && currentCardIndex < CGFloat(sampleCards.count - 1) {
+                            currentCardIndex += 1
+                        }
+                        
+                        offsetY = .zero
+                    }
+                }
+        )
     }
 }
 
@@ -137,6 +169,7 @@ struct CardView: View {
                                   axis: (x: 1, y: 0, z: 0),
                                   anchor: .bottom)
                 .padding(.top, prograss * -160)
+                .offset(y: prograss < 0 ? prograss * 250 : 0)
         }
         .frame(height: 200)
         .zIndex(Double(sampleCards.count - index))
