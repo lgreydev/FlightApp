@@ -109,12 +109,12 @@ struct PaymentCardView: View {
                 VStack(spacing: 0) {
                     ForEach(sampleCards.indices, id: \.self) { index in
                         CardView(index: index)
-                            .padding(.top, 100)
                     }
+                    .padding(.horizontal, 30)
                 }
+                .coordinateSpace(name: "SCROLL")
             }
         }
-        .coordinateSpace(name: "SCROLL")
     }
 }
 
