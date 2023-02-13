@@ -122,6 +122,18 @@ struct PaymentCardView: View {
                 .padding(.horizontal, 30)
                 .offset(y: offsetY)
                 .offset(y: currentCardIndex * -200.0)
+                
+                Rectangle()
+                    .fill(.linearGradient(colors: [
+                        .clear,
+                        .clear,
+                        .clear,
+                        .clear,
+                        .white.opacity(0.3),
+                        .white.opacity(0.7),
+                        .white
+                    ], startPoint: .top, endPoint: .bottom))
+                    .allowsHitTesting(false)
             }
             .coordinateSpace(name: "SCROLL")
         }
