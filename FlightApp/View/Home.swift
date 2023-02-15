@@ -19,7 +19,7 @@ struct Home: View {
             HeaderView(size: size, safeArea: safeArea)
                 .zIndex(1)
             
-            PaymentCardView(offsetY: $offsetY, currentCardIndex: $currentCardIndex)
+            PaymentCardView(safeArea: safeArea, offsetY: $offsetY, currentCardIndex: $currentCardIndex)
                 .zIndex(0)
         }
     }
@@ -31,32 +31,35 @@ struct HeaderView: View {
     
     var body: some View {
         VStack {
-            Image("air-canada-logo_002")
+            Image("air-canada-logo_005")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: size.width * 0.6)
+                .frame(width: size.width * 0.5)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .opacity(0.7)
             
             HStack {
+                // Toronto (YYZ)
                 FlightDetailView(alignment: .leading,
-                                 place: "Los Angeles",
-                                 code: "LAS",
-                                 timing: "23 Nov, 03:47")
+                                 place: "Toronto",
+                                 code: "YYZ",
+                                 timing: "Tue Feb 21, 08:00")
                 
                 VStack(spacing: 8) {
                     Image(systemName: "chevron.right")
                         .font(.title2)
                     
-                    Text("4h 28m")
+                    Text("Non-stop")
+                    Text("5hr08m")
                 }
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 
                 FlightDetailView(alignment: .trailing,
-                                 place: "New York",
-                                 code: "NYC",
-                                 timing: "23 Nov, 07:15")
+                                 place: "Vancouver",
+                                 code: "YVR",
+                                 timing: "Tue Feb 21, 10:08")
             }
             .padding(.top, 15)
             
@@ -102,6 +105,9 @@ struct FlightDetailView: View {
 }
 
 struct PaymentCardView: View {
+    
+    var safeArea: EdgeInsets
+    
     @Binding var offsetY: CGFloat
     @Binding var currentCardIndex: CGFloat
     
@@ -134,6 +140,24 @@ struct PaymentCardView: View {
                         .white
                     ], startPoint: .top, endPoint: .bottom))
                     .allowsHitTesting(false)
+                
+                Button {
+                    
+                } label: {
+                    Text("Confirm $365.00")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
+                        .background {
+                            Capsule()
+                                .fill(Color.blue.gradient)
+                        }
+                    
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .padding(.bottom, safeArea.bottom == 0 ? 15 : safeArea.bottom)
             }
             .coordinateSpace(name: "SCROLL")
         }
@@ -185,6 +209,9 @@ struct CardView: View {
         }
         .frame(height: 200)
         .zIndex(Double(sampleCards.count - index))
+        .onTapGesture {
+            print(index)
+        }
     }
 }
 
