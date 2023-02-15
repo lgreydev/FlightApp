@@ -19,7 +19,7 @@ struct Home: View {
             HeaderView(size: size, safeArea: safeArea)
                 .zIndex(1)
             
-            PaymentCardView(offsetY: $offsetY, currentCardIndex: $currentCardIndex)
+            PaymentCardView(safeArea: safeArea, offsetY: $offsetY, currentCardIndex: $currentCardIndex)
                 .zIndex(0)
         }
     }
@@ -102,6 +102,9 @@ struct FlightDetailView: View {
 }
 
 struct PaymentCardView: View {
+    
+    var safeArea: EdgeInsets
+    
     @Binding var offsetY: CGFloat
     @Binding var currentCardIndex: CGFloat
     
@@ -134,6 +137,24 @@ struct PaymentCardView: View {
                         .white
                     ], startPoint: .top, endPoint: .bottom))
                     .allowsHitTesting(false)
+                
+                Button {
+                    
+                } label: {
+                    Text("Confirm $1,211,00")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
+                        .background {
+                            Capsule()
+                                .fill(Color.blue.gradient)
+                        }
+                    
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .padding(.bottom, safeArea.bottom == 0 ? 15 : safeArea.bottom)
             }
             .coordinateSpace(name: "SCROLL")
         }
@@ -185,6 +206,9 @@ struct CardView: View {
         }
         .frame(height: 200)
         .zIndex(Double(sampleCards.count - index))
+        .onTapGesture {
+            print(index)
+        }
     }
 }
 
