@@ -31,32 +31,35 @@ struct HeaderView: View {
     
     var body: some View {
         VStack {
-            Image("air-canada-logo_002")
+            Image("air-canada-logo_005")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: size.width * 0.6)
+                .frame(width: size.width * 0.5)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .opacity(0.7)
             
             HStack {
+                // Toronto (YYZ)
                 FlightDetailView(alignment: .leading,
-                                 place: "Los Angeles",
-                                 code: "LAS",
-                                 timing: "23 Nov, 03:47")
+                                 place: "Toronto",
+                                 code: "YYZ",
+                                 timing: "Tue Feb 21, 08:00")
                 
                 VStack(spacing: 8) {
                     Image(systemName: "chevron.right")
                         .font(.title2)
                     
-                    Text("4h 28m")
+                    Text("Non-stop")
+                    Text("5hr08m")
                 }
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 
                 FlightDetailView(alignment: .trailing,
-                                 place: "New York",
-                                 code: "NYC",
-                                 timing: "23 Nov, 07:15")
+                                 place: "Vancouver",
+                                 code: "YVR",
+                                 timing: "Tue Feb 21, 10:08")
             }
             .padding(.top, 15)
             
@@ -141,7 +144,7 @@ struct PaymentCardView: View {
                 Button {
                     
                 } label: {
-                    Text("Confirm $1,211,00")
+                    Text("Confirm $365.00")
                         .font(.callout)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
