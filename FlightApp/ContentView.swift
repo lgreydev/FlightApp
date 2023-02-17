@@ -12,7 +12,7 @@ struct ContentView: View {
         GeometryReader {
             let size = $0.size
             let safeArea = $0.safeAreaInsets
-            Home(size: size, safeArea: safeArea)
+            DetailView(size: size, safeArea: safeArea)
                 .ignoresSafeArea(.container, edges: .vertical)
         }
     }
