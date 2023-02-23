@@ -39,7 +39,6 @@ struct HeaderView: View {
                 .opacity(0.7)
             
             HStack {
-                // Toronto (YYZ)
                 FlightDetailView(alignment: .leading,
                                  place: "Toronto",
                                  code: "YYZ",
@@ -81,7 +80,7 @@ struct HeaderView: View {
 }
 
 struct FlightDetailView: View {
-    var alignment: HorizontalAlignment
+    var alignment: HorizontalAlignment = .leading
     var place: String
     var code: String
     var timing: String
@@ -244,6 +243,32 @@ struct DetailView: View {
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
                         .fill(.white.opacity(0.2))
                 }
+                
+                HStack {
+                    FlightDetailView(alignment: .leading,
+                                     place: "Toronto",
+                                     code: "YYZ",
+                                     timing: "Tue Feb 21, 08:00")
+                    
+                    VStack(spacing: 8) {
+                        Image(systemName: "chevron.right")
+                            .font(.title2)
+                        
+                        Text("Non-stop")
+                        Text("5hr08m")
+                    }
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    
+                    FlightDetailView(alignment: .trailing,
+                                     place: "Vancouver",
+                                     code: "YVR",
+                                     timing: "Tue Feb 21, 10:08")
+                }
+                .padding(15)
+                .padding(.bottom, 70)
+                
             }
         }
         .padding(.horizontal, 20)
