@@ -268,6 +268,11 @@ struct DetailView: View {
                 }
                 .padding(15)
                 .padding(.bottom, 70)
+                .background {
+                    RoundedRectangle(cornerRadius: 15, style: .continuous)
+                        .fill(.ultraThinMaterial)
+                }
+                .padding(.top, -20)
                 
             }
         }
@@ -276,7 +281,8 @@ struct DetailView: View {
         .padding([.horizontal, .bottom], 15)
         .background {
             Rectangle()
-                .fill(.blue)
+                .fill(.indigo)
+                .padding(.bottom, 80)
         }
     }
 }
