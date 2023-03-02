@@ -275,15 +275,37 @@ struct DetailView: View {
                 .padding(.top, -20)
                 
             }
+            .padding(.horizontal, 20)
+            .padding(.top, safeArea.top + 15)
+            .padding([.horizontal, .bottom], 15)
+            .background {
+                Rectangle()
+                    .fill(.indigo)
+                    .padding(.bottom, 80)
+            }
+            
+            GeometryReader { proxy in
+                ViewThatFits {
+                    ContactInformation()
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ContactInformation()
+                    }
+                }
+            }
         }
-        .padding(.horizontal, 20)
-        .padding(.top, safeArea.top + 15)
-        .padding([.horizontal, .bottom], 15)
-        .background {
-            Rectangle()
-                .fill(.indigo)
-                .padding(.bottom, 80)
+    }
+}
+
+
+struct ContactInformation: View {
+    var body: some View {
+        VStack(spacing: 15) {
+            HStack {
+                // InfoView
+            }
         }
+        .padding(15)
+        .padding(.top, 20)
     }
 }
 
