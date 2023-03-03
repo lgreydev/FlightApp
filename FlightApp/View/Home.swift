@@ -296,18 +296,41 @@ struct DetailView: View {
     }
 }
 
-
 struct ContactInformation: View {
     var body: some View {
         VStack(spacing: 15) {
             HStack {
-                // InfoView
+                InfoView(title: "Flight", subtitle: "AR 580")
+                InfoView(title: "Class", subtitle: "Premium")
+                InfoView(title: "Aircraft", subtitle: "B 737-900")
+                InfoView(title: "Possiblity", subtitle: "AR 580")
             }
         }
         .padding(15)
         .padding(.top, 20)
     }
 }
+
+struct InfoView: View {
+    let title: String
+    let subtitle: String
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 4) {
+            Text(title)
+                .font(.caption2)
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
+            
+            Text(subtitle)
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
