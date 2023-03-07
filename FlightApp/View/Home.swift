@@ -305,9 +305,43 @@ struct ContactInformation: View {
                 InfoView(title: "Aircraft", subtitle: "B 737-900")
                 InfoView(title: "Possiblity", subtitle: "AR 580")
             }
+            
+            ContactView(name: "Juli", email: "juli@gmail.com", profile: "profile_001")
+                .padding(.top, 30)
+            ContactView(name: "Mark", email: "mark@gmail.com", profile: "profile_004")
+            ContactView(name: "Any", email: "any@gmail.com", profile: "profile_002")
+            ContactView(name: "Kristi", email: "kristi@gmail.com", profile: "profile_003")
         }
         .padding(15)
         .padding(.top, 20)
+    }
+}
+
+struct ContactView: View {
+    let name: String
+    let email: String
+    let profile: String
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(name)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
+                
+                Text(email)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Image(profile)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 60, height: 60)
+                .clipShape(Circle())
+        }
+        .padding(.horizontal, 15)
     }
 }
 
