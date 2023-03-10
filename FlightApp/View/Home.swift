@@ -309,8 +309,24 @@ struct ContactInformation: View {
             ContactView(name: "Juli", email: "juli@gmail.com", profile: "profile_001")
                 .padding(.top, 30)
             ContactView(name: "Mark", email: "mark@gmail.com", profile: "profile_004")
-            ContactView(name: "Any", email: "any@gmail.com", profile: "profile_002")
-            ContactView(name: "Kristi", email: "kristi@gmail.com", profile: "profile_003")
+//            ContactView(name: "Any", email: "any@gmail.com", profile: "profile_002")
+//            ContactView(name: "Kristi", email: "kristi@gmail.com", profile: "profile_003")
+            
+            Button {
+                // transition
+            } label: {
+                Text("Go to Home Screen")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background {
+                        Capsule()
+                            .fill(Color.indigo.gradient)
+                    }
+            }
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom, 30)
         }
         .padding(15)
         .padding(.top, 20)
