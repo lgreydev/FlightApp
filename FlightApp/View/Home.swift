@@ -17,11 +17,30 @@ struct Home: View {
     var body: some View {
         VStack {
             HeaderView(size: size, safeArea: safeArea)
+                .overlay(alignment: .bottomTrailing) {
+                    Button {
+                         
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                            .frame(width: 40, height: 40)
+                            .background {
+                                Circle()
+                                    .fill(.white)
+                                    .shadow(color: .black.opacity(0.35), radius: 5, x: 5, y: 5)
+                            }
+                    }
+                    .offset(x: -15, y: 15)
+
+                }
                 .zIndex(1)
             
             PaymentCardView(safeArea: safeArea, offsetY: $offsetY, currentCardIndex: $currentCardIndex)
                 .zIndex(0)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
