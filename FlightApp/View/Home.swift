@@ -13,13 +13,14 @@ struct Home: View {
     
     @State private var offsetY: CGFloat = 0
     @State private var currentCardIndex: CGFloat = 0
+    @State private var showingSheet = false
     
     var body: some View {
         VStack {
             HeaderView(size: size, safeArea: safeArea)
                 .overlay(alignment: .bottomTrailing) {
                     Button {
-                         
+                        showingSheet.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .font(.title3)
@@ -33,6 +34,9 @@ struct Home: View {
                             }
                     }
                     .offset(x: -15, y: 15)
+                    .sheet(isPresented: $showingSheet) {
+                        DetailView(size: size, safeArea: safeArea   )
+                    }
 
                 }
                 .zIndex(1)
@@ -237,6 +241,8 @@ struct DetailView: View {
     var size: CGSize
     var safeArea: EdgeInsets
     
+    
+    
     var body: some View {
         VStack {
             VStack(spacing: 0) {
@@ -316,6 +322,8 @@ struct DetailView: View {
 }
 
 struct ContactInformation: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack(spacing: 15) {
             HStack {
@@ -347,7 +355,7 @@ struct ContactInformation: View {
             
             
             Button {
-                // transition
+                dismiss()
             } label: {
                 Text("Go to Home Screen")
                     .fontWeight(.semibold)
