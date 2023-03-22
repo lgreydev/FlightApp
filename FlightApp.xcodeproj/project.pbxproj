@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA57F0029CA7AD1002E1DE2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57EFF29CA7AD1002E1DE2 /* HeaderView.swift */; };
+		5EA57F0229CA7B0D002E1DE2 /* FlightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0129CA7B0D002E1DE2 /* FlightDetailView.swift */; };
+		5EA57F0429CA7B4C002E1DE2 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0329CA7B4C002E1DE2 /* PaymentCardView.swift */; };
+		5EA57F0629CA7B76002E1DE2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0529CA7B76002E1DE2 /* CardView.swift */; };
+		5EA57F0A29CA7BB3002E1DE2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0929CA7BB3002E1DE2 /* DetailView.swift */; };
+		5EA57F0C29CA7BE0002E1DE2 /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0B29CA7BE0002E1DE2 /* ContactInformation.swift */; };
+		5EA57F0E29CA7C03002E1DE2 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0D29CA7C03002E1DE2 /* ContactView.swift */; };
+		5EA57F1029CA7C1F002E1DE2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0F29CA7C1F002E1DE2 /* InfoView.swift */; };
 		5EA62C802988A6F4006B0927 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA62C7F2988A6F4006B0927 /* Card.swift */; };
 		5ED5C3A9296E41E2003075A6 /* FlightAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */; };
 		5ED5C3AB296E41E2003075A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3AA296E41E2003075A6 /* ContentView.swift */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EA57EFF29CA7AD1002E1DE2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5EA57F0129CA7B0D002E1DE2 /* FlightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailView.swift; sourceTree = "<group>"; };
+		5EA57F0329CA7B4C002E1DE2 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
+		5EA57F0529CA7B76002E1DE2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5EA57F0929CA7BB3002E1DE2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5EA57F0B29CA7BE0002E1DE2 /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
+		5EA57F0D29CA7C03002E1DE2 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		5EA57F0F29CA7C1F002E1DE2 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		5EA62C7F2988A6F4006B0927 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5ED5C3A5296E41E2003075A6 /* FlightApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAppApp.swift; sourceTree = "<group>"; };
@@ -85,6 +101,14 @@
 			isa = PBXGroup;
 			children = (
 				5ED5C3B7296E423A003075A6 /* Home.swift */,
+				5EA57EFF29CA7AD1002E1DE2 /* HeaderView.swift */,
+				5EA57F0129CA7B0D002E1DE2 /* FlightDetailView.swift */,
+				5EA57F0329CA7B4C002E1DE2 /* PaymentCardView.swift */,
+				5EA57F0529CA7B76002E1DE2 /* CardView.swift */,
+				5EA57F0929CA7BB3002E1DE2 /* DetailView.swift */,
+				5EA57F0B29CA7BE0002E1DE2 /* ContactInformation.swift */,
+				5EA57F0D29CA7C03002E1DE2 /* ContactView.swift */,
+				5EA57F0F29CA7C1F002E1DE2 /* InfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,10 +183,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA57F0429CA7B4C002E1DE2 /* PaymentCardView.swift in Sources */,
+				5EA57F0E29CA7C03002E1DE2 /* ContactView.swift in Sources */,
+				5EA57F0C29CA7BE0002E1DE2 /* ContactInformation.swift in Sources */,
+				5EA57F0A29CA7BB3002E1DE2 /* DetailView.swift in Sources */,
+				5EA57F1029CA7C1F002E1DE2 /* InfoView.swift in Sources */,
+				5EA57F0029CA7AD1002E1DE2 /* HeaderView.swift in Sources */,
 				5ED5C3AB296E41E2003075A6 /* ContentView.swift in Sources */,
 				5ED5C3B8296E423A003075A6 /* Home.swift in Sources */,
 				5ED5C3A9296E41E2003075A6 /* FlightAppApp.swift in Sources */,
 				5EA62C802988A6F4006B0927 /* Card.swift in Sources */,
+				5EA57F0629CA7B76002E1DE2 /* CardView.swift in Sources */,
+				5EA57F0229CA7B0D002E1DE2 /* FlightDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
