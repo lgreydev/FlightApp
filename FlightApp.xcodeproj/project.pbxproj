@@ -16,9 +16,9 @@
 		5EA57F0E29CA7C03002E1DE2 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0D29CA7C03002E1DE2 /* ContactView.swift */; };
 		5EA57F1029CA7C1F002E1DE2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA57F0F29CA7C1F002E1DE2 /* InfoView.swift */; };
 		5EA57F1229CEC841002E1DE2 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5EA57F1129CEC841002E1DE2 /* License */; };
-		5EA57F1429CEC8CE002E1DE2 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 5EA57F1329CEC8CE002E1DE2 /* README */; };
 		5EA57F1829CECAE3002E1DE2 /* image_002.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA57F1629CECAE3002E1DE2 /* image_002.png */; };
 		5EA57F1929CECAE3002E1DE2 /* image_001.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA57F1729CECAE3002E1DE2 /* image_001.png */; };
+		5EA57F1B29CECBE2002E1DE2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EA57F1A29CECBE2002E1DE2 /* README.md */; };
 		5EA62C802988A6F4006B0927 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA62C7F2988A6F4006B0927 /* Card.swift */; };
 		5ED5C3A9296E41E2003075A6 /* FlightAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */; };
 		5ED5C3AB296E41E2003075A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5C3AA296E41E2003075A6 /* ContentView.swift */; };
@@ -37,9 +37,9 @@
 		5EA57F0D29CA7C03002E1DE2 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		5EA57F0F29CA7C1F002E1DE2 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		5EA57F1129CEC841002E1DE2 /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
-		5EA57F1329CEC8CE002E1DE2 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		5EA57F1629CECAE3002E1DE2 /* image_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_002.png; sourceTree = "<group>"; };
 		5EA57F1729CECAE3002E1DE2 /* image_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_001.png; sourceTree = "<group>"; };
+		5EA57F1A29CECBE2002E1DE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5EA62C7F2988A6F4006B0927 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5ED5C3A5296E41E2003075A6 /* FlightApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED5C3A8296E41E2003075A6 /* FlightAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAppApp.swift; sourceTree = "<group>"; };
@@ -80,9 +80,9 @@
 		5ED5C39C296E41E2003075A6 = {
 			isa = PBXGroup;
 			children = (
-				5EA57F1529CEC92F002E1DE2 /* Screenshots */,
-				5EA57F1329CEC8CE002E1DE2 /* README */,
+				5EA57F1A29CECBE2002E1DE2 /* README.md */,
 				5EA57F1129CEC841002E1DE2 /* License */,
+				5EA57F1529CEC92F002E1DE2 /* Screenshots */,
 				5ED5C3A7296E41E2003075A6 /* FlightApp */,
 				5ED5C3A6296E41E2003075A6 /* Products */,
 			);
@@ -192,8 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA57F1829CECAE3002E1DE2 /* image_002.png in Resources */,
-				5EA57F1429CEC8CE002E1DE2 /* README in Resources */,
 				5EA57F1229CEC841002E1DE2 /* License in Resources */,
+				5EA57F1B29CECBE2002E1DE2 /* README.md in Resources */,
 				5ED5C3B0296E41E4003075A6 /* Preview Assets.xcassets in Resources */,
 				5ED5C3AD296E41E4003075A6 /* Assets.xcassets in Resources */,
 				5EA57F1929CECAE3002E1DE2 /* image_001.png in Resources */,
